@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 
 class GuzzleController extends Controller
 {
@@ -31,7 +32,14 @@ class GuzzleController extends Controller
         // // Async Requests
         // $promise = $client->getAsync('https://foo.com/api/final');
 
-        $url = 'https://jservice.io/api/final';
-        
+        $url = 'https://jservice.io/api/final?count=10';
+        //$url = 'https://jservice.io/api/final';
+
+        $collections = Http::get($url);
+        $decode = json_decode($collections);
+        //return $decode;
+        //return Http::get($url);
+        //return view('test',['collections' => $collections]);
+        return view('test',['collections' => $decode]);
     }
 }

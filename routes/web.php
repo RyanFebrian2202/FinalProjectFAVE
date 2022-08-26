@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuzzleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+})->name('login');
+
+Route::get('/test',[GuzzleController::class, 'index'])->name('test');
+
+Route::middleware(['auth'])->group(function(){
+
+});
+
+Route::middleware(['auth','admin'])->group(function(){
+
 });
 
 Route::get('/dashboard', function () {
