@@ -25,6 +25,14 @@ class User extends Authenticatable
         'picture'
     ];
 
+    public function scopeFilter($query, array $filters){
+        //Search
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query
+                ->where('name','like','%' .$search. '%');
+        });
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('../../public/css/home.css')}}">
-    <link rel="stylesheet" href="{{asset('../../public/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/home.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <!-- <link rel="shortcut icon" href="./Assets/Logo-default.png"> -->
     <title>BelajarNusa</title>
-    <script defer src="{{asset('../../public/js/script.css')}}"></script>
+    <script defer src="{{asset('js/script.js')}}"></script>
 </head>
 <body>
     <header>
         <div class="nav">
-            <img src="{{asset('../../public/Assets/Logo-default.png')}}" alt="">
+            <img src="{{asset('Assets/Logo-default.png')}}" alt="">
         </div>
     </header>
 
     <section class="content">
-        <form id="form" method="POST" action="./db.blade.php">
+        <form id="form" method="POST" action="{{route('login')}}">
+            @csrf
             <div class="login-form">
                 <div class="header">
                     <h2>Welcome to <span>BelajarNusa</span></h2>
