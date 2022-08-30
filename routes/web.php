@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuzzleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('db');
+=======
+    return view('index');
+})->name('login');
+
+Route::get('/test',[GuzzleController::class, 'index'])->name('test');
+
+Route::middleware(['auth'])->group(function(){
+
+});
+
+Route::middleware(['auth','admin'])->group(function(){
+
+>>>>>>> 21e2015ed7fb5f18fd4559eddd4ddd6013b3082b
 });
 
 Route::get('/dashboard', function () {

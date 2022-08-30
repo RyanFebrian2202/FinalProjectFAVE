@@ -12,9 +12,16 @@ class Task extends Model
     protected $fillable = [
         'taskName',
         'taskDetail',
-        'taskkDeadline',
+        'taskDeadline',
         //'user_id',
-        'course_id',
-        'taskPicture'
+        'course_id'
     ];
+
+    public function scopeFilter($query, array $filters){
+        //Search
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query
+                ->where('taskName','like','%' .$search. '%');
+        });
+    }
 }
