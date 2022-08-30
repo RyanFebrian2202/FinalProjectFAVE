@@ -4,21 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('../../public/css/home.css')}}">
-    <link rel="stylesheet" href="{{asset('../../public/css/style.css')}}">
-    <!-- <link rel="shortcut icon" href="./Assets/Logo-default.png"> -->
+    <link rel="stylesheet" href="{{asset('./css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('./css/home.css')}}">
+    <link rel="stylesheet" href="{{asset('./css/dycalendar.css')}}">
+    <link rel="shortcut icon" href="./Assets/Logo-default.png">
     <title>BelajarNusa</title>
-    <script defer src="{{asset('../../public/js/script.css')}}"></script>
+    <script defer src="{{asset('./js/script.js')}}"></script>
+    <script>
+        function passValue(){
+            var username = document.getElementById("username").value;
+            localStorage.setItem("textvalue", username);
+            return false;
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="nav">
-            <img src="{{asset('../../public/Assets/Logo-default.png')}}" alt="">
+            <img src="./Assets/Logo-default.png" alt="">
         </div>
     </header>
 
     <section class="content">
-        <form id="form" method="POST" action="./db.blade.php">
+        <form id="form" method="POST" action="db.blade.php">
             <div class="login-form">
                 <div class="header">
                     <h2>Welcome to <span>BelajarNusa</span></h2>
@@ -39,7 +47,7 @@
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
-                <button class="submitBtn" type="submit">Login</button>
+                <button class="submitBtn" type="submit" onclick="passValue()">Login</button>
             </div>
         </form>
     </section>
