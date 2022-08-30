@@ -16,6 +16,6 @@ class CommentController extends Controller
             'task_id' => $id
         ]);
 
-        return redirect(route(''));
+        return redirect(route('taskDetail'));
     }
 }

@@ -24,4 +24,12 @@ class Task extends Model
                 ->where('taskName','like','%' .$search. '%');
         });
     }
+
+    public function course(){
+        return $this->belongsTo(Course::class,'course_id');
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class,'task_id');
+    }
 }

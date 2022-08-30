@@ -13,6 +13,14 @@ class Comment extends Model
         'content',
         'time',
         'user_id',
-        'course_id'
+        'task_id'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function task(){
+        return $this->belongsTo(Task::class,'task_id');
+    }
 }

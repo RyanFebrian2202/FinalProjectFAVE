@@ -14,4 +14,12 @@ class Course extends Model
         'user_id',
         'coursePicture'
     ];
+
+    public function task(){
+        return $this->hasMany(Task::class,'course_id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

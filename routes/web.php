@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\GuzzleController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,21 +20,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('db');
-=======
     return view('index');
 })->name('login');
 
-Route::get('/test',[GuzzleController::class, 'index'])->name('test');
-
 Route::middleware(['auth'])->group(function(){
+    Route::get('/user',[HomeController::class,'getDashboard'])->name('userDashboard');
 
+    // Course
+    Route::get('/user/{id}/course',[CourseController::class,'getCourseDetail'])->name('courseDetail');
+
+    // Task
+    Route::get('/user/course/{id}/task',[TaskController::class,'getTaskByID'])->name('taskDetail');
+
+    // Comment
+    Route::post('/user/course/task/{id}/comment',[CommentController::class,'createComment'])->name('postComment');
 });
 
 Route::middleware(['auth','admin'])->group(function(){
+    // Participant
+    Route::get('/admin',[HomeController::class,'getAdminDashboard'])->name('adminDashboard');
 
->>>>>>> 21e2015ed7fb5f18fd4559eddd4ddd6013b3082b
+    // Task
+    Route::get('/admin/task',[TaskController::class,'readTask'])->name('adminTask');
+    Route::get('/admin/task/create',[TaskController::class,'getCreateTask'])->name('getCreateTask');
+    Route::post('/admin/task/create',[TaskController::class,'createTask'])->name('createTask');
+    Route::get('/admin/task/{id}/edit',[TaskController::class,'getUpdatePage'])->name('getUpdateTask');
+    Route::patch('/admin/task/{id}/edit',[TaskController::class,'updateTask'])->name('updateTask');
+    Route::delete('/admin/task/{id}/delete',[TaskController::class,'deleteTask'])->name('deleteTask');
 });
 
 Route::get('/dashboard', function () {

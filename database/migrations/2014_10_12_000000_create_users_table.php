@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('role')->default(0);
             $table->string('picture');
+            $table->string('class');
             $table->rememberToken();
             $table->timestamps();
         });

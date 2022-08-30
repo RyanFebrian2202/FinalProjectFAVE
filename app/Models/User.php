@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'picture'
+        'picture',
+        'class'
     ];
 
     public function scopeFilter($query, array $filters){
@@ -31,6 +32,14 @@ class User extends Authenticatable
             return $query
                 ->where('name','like','%' .$search. '%');
         });
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class,'user_id');
+    }
+
+    public function course(){
+        return $this->hasMany(Course::class,'user_id');
     }
 
     /**
