@@ -73,7 +73,7 @@
             </div>
         </section>
     </div>
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{asset('js/dycalendar.js')}}"></script>
     <script>
         dycalendar.draw({
             target: '#calendar',

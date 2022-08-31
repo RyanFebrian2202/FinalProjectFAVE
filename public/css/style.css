@@ -381,7 +381,7 @@ hr{
     display: flex;
     align-items: center;
     justify-content:  center;
-    background-image: url(./Assets/header-image-subject.png);
+    background-image: url(../Assets/header-image-subject.png);
     height: 336px;
     margin: 50px 0;
 }

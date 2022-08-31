@@ -24,7 +24,7 @@
                 <form action="" id="question-form">
                     <input type="text" placeholder="Jawablah dengan jujur">
                     <div class="button-wrapper">
-                        <button id="nextQuestion" type="submit" onclick="setTimer();">Lanjut</button>
+                        <button id="nextQuestion" type="button" onclick="setTimer();">Lanjut</button>
                     </div>
                 </form>
                 <a id="submitQuestion" href="{{route('quizEnd')}}">Kumpul</a>
@@ -45,7 +45,7 @@
 
     document.getElementById("timer").innerHTML = minutes + ":" + String(seconds).padStart(2, '0');
 
-    if (distance < 2000) {
+    if (distance < 1000) {
         clearInterval(x);
         setTimer();
     }
@@ -70,7 +70,6 @@
         var countDownDate = new Date().getTime() + 3.03*60000;
 
         x = setInterval(function() {
-        console.log("Test");
         var now = new Date().getTime();
 
         var distance = countDownDate - now;
@@ -80,7 +79,7 @@
 
         document.getElementById("timer").innerHTML = minutes + ":" + String(seconds).padStart(2, '0');
 
-        if (distance < 2000) {
+        if (distance < 1000) {
             clearInterval(x);
             setTimer();
         }
