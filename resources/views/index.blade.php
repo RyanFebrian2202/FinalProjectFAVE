@@ -36,7 +36,7 @@
                     <label for="username">Email</label>
                     <div class="space"></div>
                     <div class="space"></div>
-                    <input id="username" type="text" name="email" placeholder="Please enter your email">
+                    <input id="username" type="text" name="email" placeholder="Please enter your email" required>
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
@@ -44,11 +44,11 @@
                     <label for="password">Password</label>
                     <div class="space"></div>
                     <div class="space"></div>
-                    <input id="password" type="password" name="password" placeholder="Please enter your password">
+                    <input id="password" type="password" name="password" placeholder="Please enter your password" required>
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
-                <button class="submitBtn" type="submit">Login</button>
+                <button class="submitBtn" type="submit" onclick="validateInputs()">Login</button>
             </div>
         </form>
     </section>

@@ -2,11 +2,11 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+// form.addEventListener('submit', e => {
+//     e.preventDefault();
 
-    validateInputs();
-});
+//     validateInputs();
+// });
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -47,11 +47,6 @@ const validateInputs = () => {
         count++;
     }
 
-    if(count == 2){
-        return true;
-    }
-
-    return false;
 };
 
 // Display nav overlay
