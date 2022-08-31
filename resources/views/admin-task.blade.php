@@ -60,11 +60,7 @@
             <h3>Are you sure want to delete this task?</h3>
             <div class="popup-buttons">
                 <a href="{{route('adminTask')}}">Cancel</a>
-                <form action="{{route('deleteTask',['id'=>$task->id])}}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('delete')
-                    <a href="" class="marked2">Delete</a>
-                </form>
+                <a href="" class="marked2" id="deleteTask">Delete</a>
             </div>
     </div>
     <div id="darken">
@@ -104,7 +100,7 @@
                                 <h6>{{$task->taskDeadline}}</h6>
                             </div>
                             <div class="task-card-content-actions">
-                                <a href="{{route('getUpdateTask')}}">
+                                <a href="{{route('getUpdateTask',['id'=>$task->id])}}">
                                     <img src="{{asset('Assets/edit.png')}}" alt="">
                                 </a>
                                 <button onclick="popup2({{$task->id}})">
@@ -131,6 +127,8 @@
             x.style.display = "block"
             var y = document.getElementById("darken");
             y.style.opacity = "0.3"
+            var deleteTask = document.getElementById("deleteTask");
+            deleteTask.href = '/admin/task/'+id+'/delete'
         }
     </script>
 </body>
