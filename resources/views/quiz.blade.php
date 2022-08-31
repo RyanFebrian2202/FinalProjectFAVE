@@ -52,6 +52,8 @@
     }, 1000);
 
     function setTimer() {
+
+        clearInterval(x);
         var queCount = document.getElementById('que_count');
         var number = queCount.innerHTML;
         number++;
@@ -61,10 +63,14 @@
             document.getElementById("submitQuestion").style.display = "block";
         }
 
+        if(number > 10){
+            window.location.href="./quiz-debrief.html";
+        }
+
         var countDownDate = new Date().getTime() + 3.03*60000;
 
-        var x = setInterval(function() {
-
+        x = setInterval(function() {
+        console.log("Test");
         var now = new Date().getTime();
 
         var distance = countDownDate - now;

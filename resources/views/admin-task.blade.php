@@ -11,6 +11,35 @@
     <script defer src="{{asset('js/script.js')}}"></script>
 </head>
 <body>
+
+    <header>
+        <div class="nav-3">
+            <div class="nav-left">
+                <div id="nav-overlay">
+                    <div class="sidebar-links">
+                        <a href="{{route('adminDashboard')}}">
+                            <img src="{{asset('Assets/students-dark.png')}}" alt="">
+                            <div class="space-horizontal"></div>
+                            <h3>Students</h3>
+                        </a>
+                        <a href="{{route('adminTask')}}" class="marked">
+                            <img src="{{asset('Assets/task-light.png')}}" alt="">
+                            <h3>Tasks</h3>
+                        </a>
+                        <button onclick="popup()">
+                            <img src="{{asset('Assets/logout.png')}}" alt="">
+                            <div class="space-horizontal"></div>
+                            <h3>Logout</h3>
+                        </button>
+                    </div>
+                    <hr>
+                </div>
+                <img src="{{asset('Assets/charm_menu-hamburger.png')}}" alt="" id="hamburger" onclick="show()">
+                <img src="{{asset('Assets/Logo-default.png')}}" alt="" id="logo-nav">
+            </div>
+        </div>
+    </header>
+
     <div id="popup-log">
         <div class="popup-img">
             <img src="{{asset('Assets/popup-exit.png')}}" alt="">
