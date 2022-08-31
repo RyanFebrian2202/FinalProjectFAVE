@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class QuizController extends Controller
 {
@@ -11,7 +12,10 @@ class QuizController extends Controller
     }
 
     public function quizStart(){
-        return view('quiz');
+        $url = 'https://jservice.io/api/final?count=10';
+        $collections = Http::get($url);
+        $decode = json_decode($collections);
+        return view('quiz', ['questions' => $decode]);
     }
 
     public function quizEnd(){

@@ -790,7 +790,7 @@ input:focus {
 }
 
 .question-container{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -798,6 +798,10 @@ input:focus {
     background: #F9FAFF;
     box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
+}
+
+.question-container.active{
+    display: flex;
 }
 
 .question-container h1{
