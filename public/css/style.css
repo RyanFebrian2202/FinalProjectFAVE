@@ -132,7 +132,7 @@ hr{
 
 .submitBtn{
     display: flex;
-    background: #89C6FF;
+    background: #3B65F9;
     border-radius: 100px;
     width: 480px;
     height: 60px;
@@ -143,6 +143,11 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.submitBtn:hover{
+    background: #2142B8;
 }
 
 /* Dashbaord */
