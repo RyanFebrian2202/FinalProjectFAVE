@@ -36,7 +36,7 @@
                     <label for="username">Email</label>
                     <div class="space"></div>
                     <div class="space"></div>
-                    <input id="username" type="text" name="email" placeholder="Please enter your email" required>
+                    <input id="username" type="text" name="email" placeholder="Please enter your email"/>
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
@@ -44,7 +44,7 @@
                     <label for="password">Password</label>
                     <div class="space"></div>
                     <div class="space"></div>
-                    <input id="password" type="password" name="password" placeholder="Please enter your password" required>
+                    <input id="password" type="password" name="password" placeholder="Please enter your password"/>
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>

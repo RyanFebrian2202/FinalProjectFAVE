@@ -5,7 +5,7 @@ const password = document.getElementById('password');
 // form.addEventListener('submit', e => {
 //     e.preventDefault();
 
-//     validateInputs();
+//     return validateInputs();
 // });
 
 const setError = (element, message) => {
@@ -47,6 +47,9 @@ const validateInputs = () => {
         count++;
     }
 
+    if(count == 2) return true;
+
+    return false;
 };
 
 // Display nav overlay
