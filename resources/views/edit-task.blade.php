@@ -62,6 +62,9 @@
                     @method('patch')
                     <input type="text" name="taskName" value="{{$task->taskName}}">
                     <div class="space"></div>
+                    <select id="course" name="course">
+                        <option value="" disabled selected>Course</option>
+                    </select>
                     <h4>Tanggal tenggat</h4>
                     <input type="datetime-local" name="taskDeadline" value="{{$task->taskDeadline}}">
                     <div class="space"></div>

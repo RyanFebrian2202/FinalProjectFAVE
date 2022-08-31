@@ -61,6 +61,10 @@
                     @csrf
                     <input type="text" placeholder="Nama" name="taskName">
                     <div class="space"></div>
+                    <select id="course" name="course">
+                        <option value="" disabled selected>Course</option>
+                        <option value="1">Nama Course</option>
+                    </select>
                     <h4>Tanggal tenggat</h4>
                     <input type="datetime-local" name="taskDeadline">
                     <div class="space"></div>
