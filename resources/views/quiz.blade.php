@@ -46,7 +46,7 @@
 
         //var activeAnswer = document.getElementById(`${$answer->answer}`);
 
-        for(let i = 1; i < activeQuestion.length; i++) {
+        for(let i = 0; i < activeQuestion.length; i++) {
             activeQuestion[i].classList.remove('active');
             // ambil data jawaban dari user, ambil jawaban dari soal ke-i
             // bandingkan jawaban user dgn jawaban soal ke-i, jika benar maka nilai user akan bertambah 10
