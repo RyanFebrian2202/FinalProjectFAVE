@@ -28,15 +28,16 @@
     <section class="content">
         <form id="form" method="POST" action="{{route('login')}}z">
             @csrf
+            @method('POST')
             <div class="login-form">
                 <div class="header">
                     <h2>Welcome to <span>BelajarNusa</span></h2>
                 </div>
                 <div class="login-input">
-                    <label for="username">Username</label>
+                    <label for="username">Email</label>
                     <div class="space"></div>
                     <div class="space"></div>
-                    <input id="username" type="text" name="username" placeholder="Please enter your username">
+                    <input id="username" type="text" name="email" placeholder="Please enter your email">
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
@@ -48,7 +49,7 @@
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
-                <button class="submitBtn" type="submit" onclick="passValue()">Login</button>
+                <button class="submitBtn" type="submit">Login</button>
             </div>
         </form>
     </section>

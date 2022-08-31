@@ -81,7 +81,8 @@
                         <div class="student-card-content">
                             <h4>{{$user->name}}</h4>
                             <h6>{{$user->class}}</h6>
-                        </di
+                        </div>
+                    </div>
                     @endforeach
                 </section>
         </div>

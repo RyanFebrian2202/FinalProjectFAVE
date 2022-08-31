@@ -29,9 +29,10 @@ class TaskController extends Controller
     public function readTask(){
         //$tasks = Task::all();
         //$tasks = Task::where('course_id','like',$course->id)
+        $limit = 7;
 
         return view('admin-task',[
-            'tasks' => Task::all()->filter(request(['search']))->withQueryString()
+            'tasks' => Task::filter(request(['search']))->paginate($limit)->withQueryString()
         ]);
     }
 
@@ -44,9 +45,10 @@ class TaskController extends Controller
     }
 
     public function getUpdatePage($id){
+        $courses = Course::all();
         $task = Task::findOrFail($id);
 
-        return view('edit-task',compact('task'));
+        return view('edit-task',compact('task','courses'));
     }
 
     public function updateTask(Request $request, $id){

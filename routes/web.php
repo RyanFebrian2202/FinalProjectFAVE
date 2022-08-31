@@ -50,7 +50,7 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/admin/task/create',[TaskController::class,'createTask'])->name('createTask');
     Route::get('/admin/task/{id}/edit',[TaskController::class,'getUpdatePage'])->name('getUpdateTask');
     Route::patch('/admin/task/{id}/edit',[TaskController::class,'updateTask'])->name('updateTask');
-    Route::delete('/admin/task/{id}/delete',[TaskController::class,'deleteTask'])->name('deleteTask');
+    Route::get('/admin/task/{id}/delete',[TaskController::class,'deleteTask'])->name('deleteTask');
 });
 
 Route::get('/dashboard', function () {

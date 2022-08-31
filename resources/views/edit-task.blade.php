@@ -102,7 +102,7 @@
                         @endforeach
                     </select>
                     <h4>Tanggal tenggat</h4>
-                    <input type="datetime-local" name="taskDeadline" value="{{$task->taskDeadline}}">
+                    <input type="date" name="taskDeadline" value="{{$task->taskDeadline->format('Y-m-d')}}">
                     <div class="space"></div>
                     <textarea rows="4" cols="50" name="taskDetail" value="{{$task->taskDetail}}">{{$task->taskDetail}}</textarea>
                     <div class="space"></div>
