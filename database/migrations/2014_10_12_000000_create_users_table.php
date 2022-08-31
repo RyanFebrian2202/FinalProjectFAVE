@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('role')->default(0);
             $table->string('picture');
             $table->string('class');
+            $table->integer('nilai')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

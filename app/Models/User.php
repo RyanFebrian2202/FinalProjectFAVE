@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         'role',
         'picture',
-        'class'
+        'class',
+        'nilai'
     ];
 
     public function scopeFilter($query, array $filters){
