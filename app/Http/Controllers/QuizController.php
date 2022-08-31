@@ -11,14 +11,16 @@ class QuizController extends Controller
         return view('quiz-brief');
     }
 
-    public function quizStart(){
+    public function quizStart(Request $request){
+        $user = $request->user();
         $url = 'https://jservice.io/api/final?count=10';
         $collections = Http::get($url);
         $decode = json_decode($collections);
-        return view('quiz', ['questions' => $decode]);
+        return view('quiz', ['user'=>$user,'questions' => $decode]);
     }
 
-    public function quizEnd(){
-        return view('quiz-debrief');
+    public function quizEnd(Request $request){
+        $user = $request->user();
+        return view('quiz-debrief',compact('user'));
     }
 }
