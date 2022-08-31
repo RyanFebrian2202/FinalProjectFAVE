@@ -102,13 +102,13 @@
                         @endforeach
                     </select>
                     <h4>Tanggal tenggat</h4>
-                    <input type="date" name="taskDeadline" value="{{$task->taskDeadline->format('Y-m-d')}}">
+                    <input type="datetime-local" name="taskDeadline" value="{{date('Y-m-d\TH:i', strtotime($task->taskDeadline))}}">
                     <div class="space"></div>
                     <textarea rows="4" cols="50" name="taskDetail" value="{{$task->taskDetail}}">{{$task->taskDetail}}</textarea>
                     <div class="space"></div>
                     <div class="space"></div>
                     <div class="tasks-buttons">
-                            <a href="admin-task.html">
+                            <a href="{{route('adminTask')}}">
                                 <h4>Cancel</h4>
                             </a>
                         <button class="task-btn-right" type="submit" onclick="">Save</button>

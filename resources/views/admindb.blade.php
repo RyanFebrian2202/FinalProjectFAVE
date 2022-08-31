@@ -84,9 +84,11 @@
                         </div>
                     </div>
                     @endforeach
+                    <div class="d-flex">
+                        {{$users->links()}}
+                    </div>
                 </section>
         </div>
-
     </div>
     <script>
         function popup(){
