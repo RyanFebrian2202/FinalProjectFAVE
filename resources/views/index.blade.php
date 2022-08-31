@@ -26,7 +26,7 @@
     </header>
 
     <section class="content">
-        <form id="form" method="POST" action="{{route('login')}}">
+        <form id="form" method="POST" action="{{route('login')}}z">
             @csrf
             <div class="login-form">
                 <div class="header">
