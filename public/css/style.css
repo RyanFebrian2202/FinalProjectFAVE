@@ -125,6 +125,10 @@ hr{
     border: 2px solid #DE3B25;
 }
 
+.login-input.success input {
+    border-color: #09c372;
+}
+
 .login-input .error {
     color: #DE3B25;
     font-size: 18px;

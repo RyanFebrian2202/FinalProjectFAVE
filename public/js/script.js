@@ -25,6 +25,7 @@ const validateInputs = () => {
     if(usernameValue === '' || usernameValue == null) {
         setError(username, 'Username not found!');
     } else {
+        setSuccess(username);
         count++;
     }
 
@@ -33,6 +34,7 @@ const validateInputs = () => {
         setError(password, 'Please enter a valid password!');
     }
     else {
+        setSuccess(password);
         count++;
     }
 
