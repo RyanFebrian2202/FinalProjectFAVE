@@ -49,7 +49,7 @@
                 <a href="{{route('getCreateTask')}}">Cancel</a>
                 <form action="{{route('logout')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <a href="">Logout</a>
+                    <button type="submit">Logout</button>
                 </form>
             </div>
     </div>
@@ -92,7 +92,9 @@
                     <div class="space"></div>
                     <select id="course" name="course">
                         <option value="" disabled selected>Course</option>
-                        <option value="1">Nama Course</option>
+                        @foreach ($courses as $course)
+                        <option value="{{$course->id}}">{{$course->courseName}}</option>
+                        @endforeach
                     </select>
                     <h4>Tanggal tenggat</h4>
                     <input type="datetime-local" name="taskDeadline">

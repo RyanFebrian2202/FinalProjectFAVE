@@ -5,6 +5,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\GuzzleController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,9 @@ Route::middleware(['auth'])->group(function(){
 
     // Comment
     Route::post('/user/course/task/{id}/comment',[CommentController::class,'createComment'])->name('postComment');
+
+    // Quiz
+    Route::get('/user/quiz',[QuizController::class,'getQuiz'])->name('getQuiz');
 });
 
 Route::middleware(['auth','admin'])->group(function(){
