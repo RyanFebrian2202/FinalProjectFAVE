@@ -26,7 +26,7 @@
     </header>
 
     <section class="content">
-        <form id="form" method="POST" action="{{route('login')}}">
+        <form id="form" method="POST" action="{{route('login')}}" onsubmit="return validateInputs()">
             @csrf
             <div class="login-form">
                 <div class="header">
@@ -48,7 +48,7 @@
                     <div class="space"></div>
                     <div class="error"></div>
                 </div>
-                <button class="submitBtn" type="submit" onclick="validateInputs()">Login</button>
+                <button class="submitBtn" type="submit">Login</button>
             </div>
         </form>
     </section>
