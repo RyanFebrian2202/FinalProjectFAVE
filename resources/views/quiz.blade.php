@@ -23,7 +23,7 @@
             <div class="question-container" id="{{$loop->index}}">
                 <h1>{{$question->question}}</h1>
                 <form action="" id="question-form">
-                    <input type="text" placeholder="Jawablah dengan jujur">
+                    <input type="text" placeholder="Jawablah dengan jujur" id="userAnswer">
                     <div class="button-wrapper">
                         <button id="nextQuestion" type="button" onclick="setTimer();">Lanjut</button>
                     </div>
@@ -33,17 +33,7 @@
             @endforeach
         </div>
     <script>
-    // Klo pencet next pagenya kerefresh lagi (Angkanya jg ngulang jadi 1 lagi)
-
-    // async function getQuestion() {
-    //     const response = await fetch("https://jservice.io/api/final?count=10").then((response) => {
-    //         response.json();
-    //     }).catch((error) => console.log(error));
-
-    //     return response;
-    // }
-
-    // getQuestion().then(response => console.log(response));
+    // declare variabel nilai untuk store nilai user, value awalnya adalah 0
     const queCount = document.getElementById('que_count');
     var countDownDate = new Date().getTime() + 3.03*60000;
 
@@ -54,8 +44,12 @@
     function setTimer() {
         var activeQuestion = document.getElementsByClassName("question-container");
 
+        var activeAnswer = document.getElementById(`${$answer->answer}`);
+
         for(let i = 0; i < activeQuestion.length; i++) {
             activeQuestion[i].classList.remove('active');
+            // ambil data jawaban dari user, ambil jawaban dari soal ke-i
+            // bandingkan jawaban user dgn jawaban soal ke-i, jika benar maka nilai user akan bertambah 10
         }
 
         var currentQuestion = document.getElementById(`${queCount.innerHTML}`);
@@ -70,11 +64,8 @@
         number++;
         queCount.innerHTML = number;
 
-        // if(number == 9){
-        //     document.getElementById("submitQuestion").style.display = "block";
-        // }
-
         if(number == 11){
+            // pada akhir kuis nilai user akan ditampilkan
             window.location.href="/user/quiz/debrief";
         }
 
@@ -101,19 +92,3 @@
 </body>
 </html>
 
-{{-- // var x = setInterval(function() {
-
-    // var now = new Date().getTime();
-
-    // var distance = countDownDate - now;
-
-    // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // document.getElementById("timer").innerHTML = minutes + ":" + String(seconds).padStart(2, '0');
-
-    // if (distance < 1000) {
-    //     clearInterval(x);
-    //     setTimer();
-    // }
-    // }, 1000); --}}
