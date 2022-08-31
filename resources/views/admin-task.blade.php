@@ -107,7 +107,7 @@
                                 <a href="{{route('getUpdateTask')}}">
                                     <img src="{{asset('Assets/edit.png')}}" alt="">
                                 </a>
-                                <button onclick="popup2()">
+                                <button onclick="popup2({{$task->id}})">
                                     <img src="{{asset('Assets/delete.png')}}" alt="">
                                 </button>
                             </div>
@@ -125,7 +125,8 @@
             var y = document.getElementById("darken");
             y.style.opacity = "0.3"
         }
-        function popup2(){
+        function popup2(id){
+            console.log(id);
             var x = document.getElementById("popup-delete");
             x.style.display = "block"
             var y = document.getElementById("darken");
