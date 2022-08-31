@@ -16,6 +16,15 @@ const setError = (element, message) => {
     inputControl.classList.add('error');
 }
 
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
 const validateInputs = () => {
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
