@@ -26,7 +26,7 @@
     </header>
 
     <section class="content">
-        <form id="form" method="POST" action="{{route('login')}}" onsubmit="validateInputs()">
+        <form id="form" method="POST" action="{{route('login')}}">
             @csrf
             <div class="login-form">
                 <div class="header">
