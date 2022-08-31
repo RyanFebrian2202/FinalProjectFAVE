@@ -110,6 +110,7 @@
                         </div>
                     </div>
                     @endforeach
+                    {{$tasks->links()}}
                 </section>
         </div>
 
