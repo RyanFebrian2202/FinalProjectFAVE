@@ -16,7 +16,7 @@
         <img src="{{asset('Assets/quiz-img.png')}}" alt="">
         <div class="quiz-brief-content">
             <h3 id="h3-debrief">Nilai Kamu</h3>
-            <h1 id="h1-debrief">Blm</h1>
+            <h1 id="h1-debrief">100</h1>
             <a id="quiz-brief-btn" href="{{route('getQuiz')}}">
                 <h4>Coba Lagi</h4>
             </a>

@@ -23,7 +23,7 @@
             <div class="question-container" id="{{$loop->index}}">
                 <h1>{{$question->question}}</h1>
                 <form action="" id="question-form">
-                    <input type="text" placeholder="Jawablah dengan jujur" id="userAnswer">
+                    <input type="text" placeholder="Jawablah dengan jujur" id="userAnswer-{{$loop->index}}">
                     <div class="button-wrapper">
                         <button id="nextQuestion" type="button" onclick="setTimer();">Lanjut</button>
                     </div>
@@ -44,9 +44,9 @@
     function setTimer() {
         var activeQuestion = document.getElementsByClassName("question-container");
 
-        var activeAnswer = document.getElementById(`${$answer->answer}`);
+        //var activeAnswer = document.getElementById(`${$answer->answer}`);
 
-        for(let i = 0; i < activeQuestion.length; i++) {
+        for(let i = 1; i < activeQuestion.length; i++) {
             activeQuestion[i].classList.remove('active');
             // ambil data jawaban dari user, ambil jawaban dari soal ke-i
             // bandingkan jawaban user dgn jawaban soal ke-i, jika benar maka nilai user akan bertambah 10

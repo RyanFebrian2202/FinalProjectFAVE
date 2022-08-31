@@ -24,6 +24,10 @@
                             <img src="{{asset('Assets/quiz.png')}}" alt="">
                             <a href="{{route('getQuiz')}}">Kuis</a>
                         </div>
+                        <div class="link">
+                            <img src="{{asset('Assets/logout.png')}}" alt="">
+                            <button onclick="popup()">Logout</button>
+                        </div>
                     </div>
                     <hr>
                     <div class="bottom">
@@ -47,7 +51,19 @@
             </div>
         </div>
     </header>
-
+    <div id="popup-log">
+        <div class="popup-img">
+            <img src="{{asset('Assets/popup-exit.png')}}" alt="">
+        </div>
+            <h3>Are you sure want to logout?</h3>
+            <div class="popup-buttons">
+                <a href="{{route('userDashboard')}}">Cancel</a>
+                <form action="{{route('logout')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <button type="submit" class="marked2">Logout</button>
+                </form>
+            </div>
+    </div>
     <section class="content-db">
         <div class="header-db">
                 <h2>Never stop learning, {{$user->name}}</h2>
@@ -138,6 +154,13 @@
                             let element = document.getElementById("banner-btn");
                             element.setAttribute('src', "{{asset('Assets/arrow-right-default.png')}}");
                             element.transition(300).duration
+                        }
+
+                        function popup(){
+                            var x = document.getElementById("popup-log");
+                            x.style.display = "block"
+                            var y = document.getElementById("darken");
+                            y.style.opacity = "0.3"
                         }
                     </script>
                 </a>
