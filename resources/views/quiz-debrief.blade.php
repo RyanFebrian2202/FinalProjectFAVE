@@ -16,11 +16,11 @@
         <img src="{{asset('Assets/quiz-img.png')}}" alt="">
         <div class="quiz-brief-content">
             <h3 id="h3-debrief">Nilai Kamu</h3>
-            <h1 id="h1-debrief">100</h1>
-            <a id="quiz-brief-btn" href="quiz.blade.php">
+            <h1 id="h1-debrief">Blm</h1>
+            <a id="quiz-brief-btn" href="{{route('getQuiz')}}">
                 <h4>Coba Lagi</h4>
             </a>
-            <a id="quiz-debrief-btn" href="db.blade.php">
+            <a id="quiz-debrief-btn" href="{{route('userDashboard')}}">
                 <h4>Keluar</h4>
             </a>
         </div>

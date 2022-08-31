@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\User;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,7 +18,7 @@ class HomeController extends Controller
         $courses2 = Course::skip(3)->take(3)->get();
 
         if ($user->role == 0){
-            return view('db',compact('courses','courses1','courses2'));
+            return view('db',compact('user','courses','courses1','courses2'));
         } else {
             return redirect(route('adminDashboard'));
         }

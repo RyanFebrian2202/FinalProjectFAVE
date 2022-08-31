@@ -21,7 +21,7 @@
                 <h5><u>Keterangan:</u></h5>
                 <h5>Terdapat total 10 pertanyaan</h5>
                 <h5>Diberi waktu 3 menit untuk menjawab setiap soal</h5>
-                <a id="quiz-brief-btn" href="quiz.blade.php">
+                <a id="quiz-brief-btn" href="{{route('quizStart')}}">
                     <img src="{{asset('Assets/play-quiz.png')}}" alt="">
                     <h4>Mulai</h4>
                 </a>

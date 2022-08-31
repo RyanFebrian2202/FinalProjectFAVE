@@ -37,7 +37,9 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/user/course/task/{id}/comment',[CommentController::class,'createComment'])->name('postComment');
 
     // Quiz
-    Route::get('/user/quiz',[QuizController::class,'getQuiz'])->name('getQuiz');
+    Route::get('/user/quiz/brief',[QuizController::class,'getQuiz'])->name('getQuiz');
+    Route::get('/user/quiz/start',[QuizController::class,'quizStart'])->name('quizStart');
+    Route::get('/user/quiz/debrief',[QuizController::class,'quizEnd'])->name('quizEnd');
 });
 
 Route::middleware(['auth','admin'])->group(function(){

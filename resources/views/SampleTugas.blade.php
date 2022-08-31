@@ -22,7 +22,7 @@
                         </div>
                         <div class="link">
                             <img src="{{asset('Assets/quiz.png')}}" alt="">
-                            <a href="quiz.blade.php">Kuis</a>
+                            <a href="{{route('getQuiz')}}">Kuis</a>
                         </div>
                     </div>
                     <hr>
@@ -93,10 +93,10 @@
             </div>
             <div class="comment-input">
                 <div class="comment-left"></div>
-                <form id="comment-field" action="{{route('postComment',['id'=>$task->id])}}" type="submit" method="POST" enctype="multipart/form-data">
+                <form id="comment-field" action="{{route('postComment',['id'=>$task->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input id="comment" type="text" name="content" placeholder="Tambahkan komentar">
-                    <button id="submitComment">
+                    <button id="submitComment" type="submit">
                         <img id="send" src="{{asset('Assets/send.png')}}" onmouseover="hover();" onmouseout="unhover();" onfocus="focus()">
                     </button>
                     <script>

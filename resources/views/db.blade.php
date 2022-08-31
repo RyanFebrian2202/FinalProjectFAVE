@@ -22,7 +22,7 @@
                         </div>
                         <div class="link">
                             <img src="{{asset('Assets/quiz.png')}}" alt="">
-                            <a href="quiz.blade.php">Kuis</a>
+                            <a href="{{route('getQuiz')}}">Kuis</a>
                         </div>
                     </div>
                     <hr>
@@ -73,16 +73,16 @@
                         </div>
                         <img src="{{asset('Assets/pp-guru.png')}}" alt="">
                     </div>
-                    @php
-                        use App\Models\Task;
-                        $tasks = Task::where('course_id','=',$course1->id)->orderBy('taskDeadline','asc')->take(3)->get();
+                    {{-- @php
+                    use App/Models/Task;
+                    $tasks = Task::where('course_id','=',$course1->id)->orderBy('taskDeadline','asc')->take(3)->get();
                     @endphp
                     @foreach ($tasks as $task)
                     <div class="deadline">
                         <h5>{{$task->taskName}}</h5>
                         <h5>{{$task->taskDeadline}}</h5>
                     </div>
-                    @endforeach
+                    @endforeach --}}
                 </a>
                 @endforeach
             </div>
@@ -95,12 +95,11 @@
                     <div class="card-content-container">
                         <div class="card-content">
                             <h3>{{$course2->courseName}}</h3>
-                            <h5>{{$course->user->name}}</h5>
+                            <h5>{{$course2->user->name}}</h5>
                         </div>
                         <img src="{{asset('Assets/pp-guru.png')}}" alt="">
                     </div>
-                    @php
-                        use App\Models\Task;
+                    {{-- @php
                         $tasks = Task::where('course_id','=',$course2->id)->orderBy('taskDeadline','asc')->take(3)->get();
                     @endphp
                     @foreach ($tasks as $task)
@@ -108,7 +107,7 @@
                         <h5>{{$task->taskName}}</h5>
                         <h5>{{$task->taskDeadline}}</h5>
                     </div>
-                    @endforeach
+                    @endforeach --}}
                 </a>
                 @endforeach
             </div>
@@ -125,7 +124,7 @@
                 </div>
             </div>
             <div class="banner-right">
-                <a href="quiz.blade.php" class="banner-btn"onmouseover="hover();" onmouseout="unhover();">
+                <a href="{{route('getQuiz')}}" class="banner-btn"onmouseover="hover();" onmouseout="unhover();">
                     <h3>Kerjakan Kuis</h3>
                     <img id="banner-btn" src="{{asset('Assets/arrow-right-default.png')}}"/>
                     <script>

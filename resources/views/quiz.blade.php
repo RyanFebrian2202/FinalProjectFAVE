@@ -27,7 +27,7 @@
                         <button id="nextQuestion" type="submit" onclick="setTimer();">Lanjut</button>
                     </div>
                 </form>
-                <a id="submitQuestion" href="quiz-debrief.blade.php">Kumpul</a>
+                <a id="submitQuestion" href="{{route('quizEnd')}}">Kumpul</a>
             </div>
         </div>
     <script>

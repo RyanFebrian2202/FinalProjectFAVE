@@ -22,7 +22,7 @@
                         </div>
                         <div class="link">
                             <img src="{{asset('Assets/quiz.png')}}" alt="">
-                            <a href="quiz.blade.php">Kuis</a>
+                            <a href="{{route('getQuiz')}}">Kuis</a>
                         </div>
                     </div>
                     <hr>
