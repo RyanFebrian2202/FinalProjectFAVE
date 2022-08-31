@@ -96,7 +96,9 @@
                 <form id="comment-field" action="{{route('postComment',['id'=>$task->id])}}" type="submit" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input id="comment" type="text" name="content" placeholder="Tambahkan komentar">
-                    <img id="send" src="{{asset('Assets/send.png')}}" onmouseover="hover();" onmouseout="unhover();" onfocus="focus()">
+                    <button id="submitComment">
+                        <img id="send" src="{{asset('Assets/send.png')}}" onmouseover="hover();" onmouseout="unhover();" onfocus="focus()">
+                    </button>
                     <script>
                         function hover() {
                             let element = document.getElementById("send");

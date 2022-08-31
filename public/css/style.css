@@ -132,7 +132,7 @@ hr{
 
 .submitBtn{
     display: flex;
-    background: #3B65F9;
+    background: #89C6FF;
     border-radius: 100px;
     width: 480px;
     height: 60px;
@@ -143,11 +143,6 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.3s ease-in-out;
-}
-
-.submitBtn:hover{
-    background: #2142B8;
 }
 
 /* Dashbaord */
@@ -619,6 +614,20 @@ input:focus {
 
 #comment-field input {
     width: 50vw;
+}
+
+#comment-field button{
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+}
+
+#comment-field button:hover{
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
 }
 
 /* input:focus + #comment-field{

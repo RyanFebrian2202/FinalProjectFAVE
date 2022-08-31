@@ -26,9 +26,8 @@
     </header>
 
     <section class="content">
-        <form id="form" method="POST" action="{{route('login')}}z">
+        <form id="form" method="POST" action="{{route('login')}}" onsubmit="validateInputs()">
             @csrf
-            @method('POST')
             <div class="login-form">
                 <div class="header">
                     <h2>Welcome to <span>BelajarNusa</span></h2>
