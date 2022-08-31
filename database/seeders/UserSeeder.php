@@ -17,13 +17,59 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('AdminTest#123'),
+            'name' => 'Caitlyn Jossephine',
+            'email' => 'caitlyn@gmail.com',
+            'password' => Hash::make('CaitlynTest#123'),
             'role' => 1,
-            'picture' => $this->faker->image()
+            'picture' => 'dummyFoto.png',
+            'class' => 'LF11'
         ]);
 
-        \App\Models\User::factory()->count(100)->create();
+        User::create([
+            'name' => 'Veronica Srisupeni',
+            'email' => 'vero@gmail.com',
+            'password' => Hash::make('VeroTest#123'),
+            'role' => 1,
+            'picture' => 'dummyFoto.png',
+            'class' => 'LF11'
+        ]);
+
+        User::create([
+            'name' => 'Cahyo Purnomo',
+            'email' => 'cahyo@gmail.com',
+            'password' => Hash::make('CahyoTest#123'),
+            'role' => 1,
+            'picture' => 'dummyFoto.png',
+            'class' => 'LF11'
+        ]);
+
+        User::create([
+            'name' => 'Prima Abim',
+            'email' => 'abim@gmail.com',
+            'password' => Hash::make('AbimTest#123'),
+            'role' => 1,
+            'picture' => 'dummyFoto.png',
+            'class' => 'LF11'
+        ]);
+
+        User::create([
+            'name' => 'Harsono Ojek',
+            'email' => 'harsono@gmail.com',
+            'password' => Hash::make('HarsonoTest#123'),
+            'role' => 1,
+            'picture' => 'dummyFoto.png',
+            'class' => 'LF11'
+        ]);
+
+        User::create([
+            'name' => 'Sutopo Raya',
+            'email' => 'topo@gmail.com',
+            'password' => Hash::make('TopoTest#123'),
+            'role' => 1,
+            'picture' => 'dummyFoto.png',
+            'class' => 'LF11'
+        ]);
+
+        \App\Models\User::factory()->count(50)->create();
     }
 }

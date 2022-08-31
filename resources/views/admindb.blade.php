@@ -49,7 +49,7 @@
                 <a href="{{route('adminDashboard')}}">Cancel</a>
                 <form action="{{route('logout')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <a href="">Logout</a>
+                    <button type="submit">Logout</button>
                 </form>
             </div>
     </div>

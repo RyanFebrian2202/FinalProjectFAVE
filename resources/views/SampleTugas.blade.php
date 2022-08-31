@@ -55,16 +55,15 @@
                 <div class="tugas-header-bottom">
                     <div class="tugas-header-bottom-left">
                         <h4>{{$task->course->user->name}}</h4>
-                        <h4>Tanggal Assign</h4>
+                        <h4>{{date('d M', strtotime($task->created_at))}}</h4>
                     </div>
                     <div class="tugas-header-bottom-right">
-                        <h4>Tenggat:&nbsp</h4>
-                        <h4>Tanggal Tenggat</h4>
+                        <h4>Tenggat:{{date('H:i', strtotime($task->taskDeadline))}}</h4>
+                        <h4>{{date('d M', strtotime($task->taskDeadline))}}</h4>
                     </div>
                 </div>
                 <hr>
-                <h4>Upload your interview rating sheet and video link. The video should be uploaded on Drive/Youtube(UNLISTED) and accessible for us to check. The rating sheet is attached below
-                Format: Group No_Class
+                <h4>{{$task->taskDetail}}
                 </h4>
                 <div class="space"></div>
                 <hr>
@@ -83,7 +82,7 @@
                     <div class="comment-right">
                         <div class="comment-right-top">
                             <h5>{{$comment->user->name}}</h5>
-                            <p>{{$comment->time}}</p>
+                            <p>{{date('d M', strtotime($comment->created_at))}}</p>
                         </div>
                         <div class="comment-right-bottom">
                             <h5>{{$comment->content}}</h5>

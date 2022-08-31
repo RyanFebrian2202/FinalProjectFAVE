@@ -92,7 +92,14 @@
                     <input type="text" name="taskName" value="{{$task->taskName}}">
                     <div class="space"></div>
                     <select id="course" name="course">
-                        <option value="" disabled selected>Course</option>
+                        <option value="{{$task->course->id}}" selected>{{$task->course->courseName}}</option>
+                        @foreach ($courses as $course)
+                        @if($course->id === $task->course->id)
+                        {{-- Kosong --}}
+                        @else
+                        <option value="{{$course->id}}">{{$course->courseName}}</option>
+                        @endif
+                        @endforeach
                     </select>
                     <h4>Tanggal tenggat</h4>
                     <input type="datetime-local" name="taskDeadline" value="{{$task->taskDeadline}}">
